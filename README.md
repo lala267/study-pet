@@ -1,4 +1,4 @@
-# 桌面爬宠学习计时器
+# 路飞桌宠学习计时器
 
 第一阶段 MVP，基于 Tauri + React + TypeScript。
 
