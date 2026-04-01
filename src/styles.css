@@ -1,0 +1,246 @@
+:root {
+    font-family: "Press Start 2P", "PingFang SC", "Microsoft YaHei", monospace;
+    color: #34191b;
+    background: transparent;
+    --ink: rgba(28, 18, 19, 0.95);
+    --time: #a63a3a;
+    --time-shadow: #ffe3a8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    min-height: 100%;
+    background: transparent;
+}
+
+body {
+    min-width: 100%;
+    min-height: 100vh;
+    background: transparent;
+    overflow: hidden;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    border: none;
+    padding: 0;
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+}
+
+.app-shell {
+    width: 100vw;
+    height: 100vh;
+    padding: 8px 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: transparent;
+}
+
+.widget-shell {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: 4px;
+    width: 220px;
+    min-height: 228px;
+}
+
+.pet-stage {
+    display: grid;
+    justify-self: center;
+    justify-items: center;
+    width: 126px;
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+.pet-card {
+    display: grid;
+    justify-items: center;
+}
+
+.pet-visual {
+    width: 126px;
+    min-height: 124px;
+    display: grid;
+    place-items: end center;
+    position: relative;
+    background: transparent;
+    pointer-events: none;
+}
+
+.pixel-pet {
+    width: 106px;
+    height: auto;
+    max-height: 120px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 0 rgba(33, 17, 16, 0.12));
+}
+
+.pet-head-drag {
+    position: absolute;
+    top: 4px;
+    left: 15px;
+    width: 96px;
+    height: 66px;
+    z-index: 2;
+    background: transparent;
+    pointer-events: auto;
+}
+
+.pet-body-button {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: transparent;
+    pointer-events: auto;
+}
+
+.widget-summary {
+    display: grid;
+    justify-self: center;
+    justify-items: center;
+    width: 126px;
+    margin-left: 0;
+    margin-top: -2px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-2px) scale(0.98);
+    transition:
+            opacity 140ms ease,
+            transform 140ms ease;
+}
+
+.widget-summary.is-open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.timer-card {
+    background: transparent;
+}
+
+.time-badge {
+    display: block;
+    width: 100%;
+    color: var(--time);
+    font-size: 0.94rem;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-shadow:
+            2px 0 0 var(--time-shadow),
+            0 2px 0 rgba(255, 243, 216, 0.75);
+}
+
+.control-bar {
+    position: absolute;
+    top: 88px;
+    left: 0;
+    width: 220px;
+    height: 86px;
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(2px) scale(0.97);
+    transform-origin: center center;
+    transition:
+            opacity 140ms ease,
+            transform 140ms ease;
+}
+
+.control-bar.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+.meat-button {
+    position: absolute;
+    width: 76px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    pointer-events: auto;
+}
+
+.meat-button--left {
+    top: 16px;
+    left: 10px;
+    transform: rotate(14deg);
+}
+
+.meat-button--right {
+    top: 16px;
+    left: 112px;
+    transform: rotate(-14deg);
+}
+
+.meat-button:active {
+    margin-top: 1px;
+}
+
+.meat-button__sprite {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    filter: drop-shadow(0 2px 0 rgba(27, 15, 15, 0.14));
+    pointer-events: none;
+}
+
+.meat-button__sprite.is-mirrored {
+    transform: scaleX(-1);
+}
+
+.meat-button__label {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 0 10px;
+    color: #fff9f4;
+    font-size: 0.58rem;
+    line-height: 1;
+    text-shadow:
+            1px 0 0 rgba(46, 20, 19, 0.96),
+            -1px 0 0 rgba(46, 20, 19, 0.96),
+            0 1px 0 rgba(46, 20, 19, 0.96),
+            0 -1px 0 rgba(46, 20, 19, 0.96);
+    pointer-events: none;
+}
+
+@media (max-width: 420px) {
+    .app-shell {
+        padding: 6px;
+    }
+
+    .widget-shell {
+        width: 208px;
+    }
+
+    .control-bar {
+        width: 208px;
+    }
+
+    .meat-button--right {
+        left: 124px;
+    }
+}
