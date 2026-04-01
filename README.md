@@ -2,6 +2,8 @@
 
 第一阶段 MVP，基于 Tauri + React + TypeScript。
 
+[![Download for macOS](https://img.shields.io/badge/Download%20for-macOS-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/lala267/study-pet/releases/latest)
+
 ## 展示图
 
 ### 桌宠展开态
